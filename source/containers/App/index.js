@@ -14,7 +14,6 @@ const options = {
 
 @hot(module)
 export default class App extends Component {
-    
     render(){
         return (
             <Provider value={ options }>

@@ -19,7 +19,6 @@ export default class StatusBar extends Component {
        </section> 
         )}
       </Consumer>
-       
     );
   }
 }
