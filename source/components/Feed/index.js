@@ -15,11 +15,13 @@ export default class Feed extends Component {
     ],
     isSpinning: true
   };
+
   render() {
     const { posts } = this.state;
     const postsJSX = posts.map(post => {
       return <Post key={post.id} {...post} />;
     });
+
     return (
       <section className={Styles.feed}>
         <Spinner isSpinning={this.state.isSpinning} />
