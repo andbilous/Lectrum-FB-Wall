@@ -55,12 +55,9 @@ export default class Feed extends Component {
       return null;
     }
     await delay(1200);
-    let newPosts = this.state.posts;
-    this.setState({
-      posts: newPosts.filter(function(post) {
-        return post.id !== id;
-      })
-    });
+    this.setState(({ posts }) => ({
+      posts: posts.filter(post => post.id !== id)
+    }));
   }
 
   async _likePost(id) {
