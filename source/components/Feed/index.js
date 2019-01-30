@@ -55,10 +55,11 @@ export default class Feed extends Component {
       return null;
     }
     await delay(1200);
-    let post = this.state.posts.find(post => post.id === id);
-    let deletedPostIndex = this.state.posts.indexOf(post);
-    const newPosts = this.state.posts;
-    newPosts.splice(deletedPostIndex, 1);
+    console.log(id);
+    let newPosts = this.state.posts;
+    newPosts = newPosts.filter(function(post) {
+      return post.id !== id;
+    });
     this.setState({
       posts: newPosts
     });
