@@ -56,11 +56,10 @@ export default class Feed extends Component {
     }
     await delay(1200);
     let newPosts = this.state.posts;
-    newPosts = newPosts.filter(function(post) {
-      return post.id !== id;
-    });
     this.setState({
-      posts: newPosts
+      posts: newPosts.filter(function(post) {
+        return post.id !== id;
+      })
     });
   }
 
