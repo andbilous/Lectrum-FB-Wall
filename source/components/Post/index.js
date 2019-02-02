@@ -3,10 +3,11 @@ import moment from "moment";
 import { func, string, number, array } from "prop-types";
 
 import Like from "components/Like";
-import { Consumer } from "../../components/HOC/withProfile";
+import { withProfile } from "../../components/HOC/withProfile";
 import Styles from "./styles.m.css";
 
-export default class Post extends Component {
+@withProfile
+class Post extends Component {
   static propTypes = {
     id: string.isRequired,
     comment: string.isRequired,
@@ -16,38 +17,37 @@ export default class Post extends Component {
     likes: array.isRequired
   };
 
-  constructor() {
-    super();
-    this._onDeletePostHandler = this._onDeletePostHandler.bind(this);
-  }
-
-  _onDeletePostHandler() {
+  _onDeletePostHandler = () => {
     this.props._deletePost(this.props.id);
-  }
+  };
 
   render() {
-    const { comment, created, _likePost, id, likes } = this.props;
+    const {
+      comment,
+      created,
+      _likePost,
+      id,
+      likes,
+      avatar,
+      currentUserFirstName,
+      currentUserLastName
+    } = this.props;
 
     return (
-      <Consumer>
-        {context => (
-          <section className={Styles.post}>
-            <span
-              className={Styles.cross}
-              onClick={this._onDeletePostHandler}
-            />
-            <img src={context.avatar} />{" "}
-            <a>
-              {" "}
-              {`${context.currentUserFirstName}
-          ${context.currentUserLastName}`}{" "}
-            </a>
-            <time> {moment.unix(created).format("YYYY MMMM D h:mm:ss")} </time>
-            <p>{comment}</p>
-            <Like _likePost={_likePost} id={id} likes={likes} {...context} />
-          </section>
-        )}
-      </Consumer>
+      <section className={Styles.post}>
+        <span className={Styles.cross} onClick={this._onDeletePostHandler} />
+        <img src={avatar} />{" "}
+        <a>
+          {" "}
+          {`${currentUserFirstName}
+          ${currentUserLastName}`}{" "}
+        </a>
+        <time> {moment.unix(created).format("YYYY MMMM D h:mm:ss")} </time>
+        <p>{comment}</p>
+        <Like _likePost={_likePost} id={id} likes={likes} />
+      </section>
     );
   }
 }
+
+export default withProfile(Post);
