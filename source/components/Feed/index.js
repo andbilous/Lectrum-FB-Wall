@@ -10,7 +10,6 @@ import Spinner from "../Spinner";
 import Styles from "./styles.m.css";
 import { getUniqueID, delay } from "instruments";
 
-@withProfile
 class Feed extends Component {
   state = {
     posts: [
