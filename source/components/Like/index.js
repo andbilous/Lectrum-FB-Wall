@@ -5,7 +5,6 @@ import Styles from "./styles.m.css";
 import cx from "classnames";
 import { withProfile } from "../../components/HOC/withProfile";
 
-@withProfile
 class Like extends Component {
   static propTypes = {
     _likePost: func.isRequired,

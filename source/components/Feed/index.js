@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Transition } from "react-transition-group";
+import { fromTo } from "gsap";
 
 import { withProfile } from "components/HOC/withProfile";
 import Catcher from "../Catcher/index";
@@ -6,13 +8,13 @@ import Composer from "./../Composer/index";
 import Post from "../Post/index";
 import StatusBar from "../StatusBar/index";
 import Spinner from "../Spinner";
+import Postman from "../Postman/index";
 
 import Styles from "./styles.m.css";
 import { api, TOKEN } from "config/api";
 import { socket } from "socket/init";
 import { GROUP_ID } from "../../config/api";
 
-@withProfile
 class Feed extends Component {
   state = {
     posts: [],
@@ -137,6 +139,15 @@ class Feed extends Component {
     }));
   };
 
+  _animateComposerEnter = composer => {
+    fromTo(
+      composer,
+      1,
+      { opacity: 0, rotationX: 50 },
+      { opacity: 1, rotationX: 0 }
+    );
+  };
+
   render() {
     const { posts } = this.state;
     const postsJSX = posts.map(post => {
@@ -156,7 +167,17 @@ class Feed extends Component {
       <section className={Styles.feed}>
         <Spinner isSpinning={this.state.isPostsFetching} />
         <StatusBar />
-        <Composer _createPost={this._createPost} />
+        <Transition
+          appear
+          in
+          timeout={1000}
+          onEnter={this._animateComposerEnter}
+          onEntered={() => console.log("entered")}
+          onEntering={() => console.log("entering")}
+        >
+          <Composer _createPost={this._createPost} />
+        </Transition>
+        <Postman />
         {postsJSX}
       </section>
     );

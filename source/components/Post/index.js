@@ -5,7 +5,6 @@ import Like from "components/Like";
 import { withProfile } from "../../components/HOC/withProfile";
 import Styles from "./styles.m.css";
 
-@withProfile
 class Post extends Component {
   static propTypes = {
     id: string.isRequired,
