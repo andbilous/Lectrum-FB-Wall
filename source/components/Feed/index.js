@@ -147,7 +147,15 @@ class Feed extends Component {
       { opacity: 1, rotationX: 0 }
     );
   };
+  _animatePostmanEnter = Postman => {
+    console.log("Postman Enter");
+    fromTo(Postman, 3, { opacity: 0 }, { opacity: 1 });
+  };
 
+  _animatePostmanEntered = Postman => {
+    console.log("Postman Entered");
+    fromTo(Postman, 3, { opacity: 1 }, { opacity: 0 });
+  };
   render() {
     const { posts } = this.state;
     const postsJSX = posts.map(post => {
@@ -177,7 +185,15 @@ class Feed extends Component {
         >
           <Composer _createPost={this._createPost} />
         </Transition>
-        <Postman />
+        <Transition
+          appear
+          in
+          timeout={1000}
+          onEnter={this._animatePostmanEnter}
+          onEntered={this._animatePostmanEntered}
+        >
+          <Postman />
+        </Transition>
         {postsJSX}
       </section>
     );
