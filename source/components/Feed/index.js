@@ -148,12 +148,10 @@ class Feed extends Component {
     );
   };
   _animatePostmanEnter = Postman => {
-    console.log("Postman Enter");
     fromTo(Postman, 3, { opacity: 0 }, { opacity: 1 });
   };
 
   _animatePostmanEntered = Postman => {
-    console.log("Postman Entered");
     fromTo(Postman, 3, { opacity: 1 }, { opacity: 0 });
   };
   render() {
