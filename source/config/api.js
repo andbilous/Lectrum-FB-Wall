@@ -5,5 +5,5 @@ const GROUP_ID = "muigd1gnahf3";
 const TOKEN = "xk920xraxa";
 const url = "https://lab.lectrum.io/react/api";
 const api = getFullApiUrl(url, GROUP_ID);
-
+console.log(api);
 export { GROUP_ID, TOKEN, api, url };

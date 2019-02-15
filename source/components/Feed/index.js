@@ -9,6 +9,7 @@ import Post from "../Post/index";
 import StatusBar from "../StatusBar/index";
 import Spinner from "../Spinner";
 import Postman from "../Postman/index";
+import Counter from "../Counter/index";
 
 import Styles from "./styles.m.css";
 import { api, TOKEN } from "config/api";
@@ -147,6 +148,7 @@ class Feed extends Component {
       { opacity: 1, rotationX: 0 }
     );
   };
+
   _animatePostmanEnter = Postman => {
     fromTo(Postman, 3, { opacity: 0 }, { opacity: 1 });
   };
@@ -154,6 +156,7 @@ class Feed extends Component {
   _animatePostmanEntered = Postman => {
     fromTo(Postman, 3, { opacity: 1 }, { opacity: 0 });
   };
+
   render() {
     const { posts } = this.state;
     const postsJSX = posts.map(post => {
@@ -192,6 +195,7 @@ class Feed extends Component {
         >
           <Postman />
         </Transition>
+        <Counter count={postsJSX.length} />
         {postsJSX}
       </section>
     );
