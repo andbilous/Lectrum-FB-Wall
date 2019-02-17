@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import { func, string } from "prop-types";
-import Composer from "./";
+import { Composer } from "./";
 
 const props = {
   _createPost: func.isRequired,
