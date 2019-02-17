@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Styles from "./styles.m.css";
 import { withProfile } from "../HOC/withProfile";
 

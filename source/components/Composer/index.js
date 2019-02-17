@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import { withProfile } from "../HOC/withProfile";
 import Styles from "./styles.m.css";
 
