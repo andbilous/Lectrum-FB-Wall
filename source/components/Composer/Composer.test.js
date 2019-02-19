@@ -80,7 +80,9 @@ describe("composer component", () => {
     expect(_submitCommentSpy).toHaveBeenCalledTimes(1);
   });
   test("should handle key enter submit event", () => {
-    result.find("textarea").simulate("keypress", { key: "Enter" });
+    result.find("textarea").simulate("keypress", {
+      key: "Enter"
+    });
     expect(result.state()).toEqual(initialState);
     expect(_submitOnEnterSpy).toHaveBeenCalledTimes(1);
   });

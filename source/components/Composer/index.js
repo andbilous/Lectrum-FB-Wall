@@ -51,14 +51,14 @@ export class Composer extends Component {
 
     return (
       <section className={Styles.composer}>
-        <img src={avatar} />
+        <img src={avatar} />{" "}
         <form onSubmit={this._handleFormSubmit}>
           <textarea
             placeholder={`What's on your mind, ${currentUserFirstName} ?`}
             value={comment}
             onChange={this._updateComment}
             onKeyPress={this._submitOnEnter}
-          />
+          />{" "}
           <input type="submit" value="Post" />
         </form>
       </section>
