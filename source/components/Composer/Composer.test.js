@@ -27,20 +27,20 @@ const _submitOnEnterSpy = jest.spyOn(result.instance(), "_submitOnEnter");
 
 describe("composer component", () => {
   test("should have 1 section element", () => {
-    expect(result.find("section")).toHaveLength(1);
+    expect(result.find("section")).toMatchSnapshot();
   });
   test("should have 1 form element", () => {
-    expect(result.find("form")).toHaveLength(1);
+    expect(result.find("form")).toMatchSnapshot();
   });
   test("should have 1 textarea element", () => {
-    expect(result.find("textarea")).toHaveLength(1);
+    expect(result.find("textarea")).toMatchSnapshot();
   });
 
   test("should have 1 input element", () => {
-    expect(result.find("input")).toHaveLength(1);
+    expect(result.find("input")).toMatchSnapshot();
   });
   test("should have 1 img element", () => {
-    expect(result.find("img")).toHaveLength(1);
+    expect(result.find("img")).toMatchSnapshot();
   });
 
   test("should have valid initial state", () => {

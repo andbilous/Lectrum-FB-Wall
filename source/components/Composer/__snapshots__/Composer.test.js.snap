@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`composer component should have 1 section element 1`] = `
+<section
+  className="composer"
+>
+  <img />
+   
+  <form
+    onSubmit={[Function]}
+  >
+    <textarea
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="What's on your mind, undefined ?"
+      value=""
+    />
+     
+    <input
+      type="submit"
+      value="Post"
+    />
+  </form>
+</section>
+`;
