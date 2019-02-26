@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`composer component should have 1 form element 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <textarea
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder="What's on your mind, undefined ?"
+    value=""
+  />
+   
+  <input
+    type="submit"
+    value="Post"
+  />
+</form>
+`;
+
+exports[`composer component should have 1 img element 1`] = `<img />`;
+
+exports[`composer component should have 1 input element 1`] = `
+<input
+  type="submit"
+  value="Post"
+/>
+`;
+
 exports[`composer component should have 1 section element 1`] = `
 <section
   className="composer"
@@ -22,4 +49,13 @@ exports[`composer component should have 1 section element 1`] = `
     />
   </form>
 </section>
+`;
+
+exports[`composer component should have 1 textarea element 1`] = `
+<textarea
+  onChange={[Function]}
+  onKeyPress={[Function]}
+  placeholder="What's on your mind, undefined ?"
+  value=""
+/>
 `;

@@ -3,6 +3,7 @@ import cx from "classnames";
 import { withProfile } from "../../components/HOC/withProfile";
 import { Transition } from "react-transition-group";
 import { fromTo } from "gsap";
+import { Link } from "react-router-dom";
 
 import Styles from "./styles.m.css";
 import { socket } from "socket/init";
@@ -55,10 +56,12 @@ class StatusBar extends Component {
             <div>{statusMessage}</div>
             <span />
           </div>
-          <button>
+          <Link to="/profile">
             <img src={avatar} />
-            <span> {currentUserFirstName} </span> &nbsp;
-          </button>
+            <span> {currentUserFirstName} </span>
+          </Link>
+          <Link to="/feed">Feed</Link>
+          <button onClick={this.props.logout}>Logout</button>
         </section>
       </Transition>
     );
