@@ -61,7 +61,9 @@ class StatusBar extends Component {
             <span> {currentUserFirstName} </span>
           </Link>
           <Link to="/feed">Feed</Link>
-          <button onClick={this.props.logout}>Logout</button>
+          {this.props.isLoggedIn ? (
+            <button onClick={this.props.logout}>Logout</button>
+          ) : null}
         </section>
       </Transition>
     );
