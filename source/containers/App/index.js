@@ -16,7 +16,7 @@ const options = {
 };
 const loginBtnStyles = {
   marginTop: "1rem",
-  marginLeft: "17rem"
+  marginLeft: "45%"
 };
 
 @hot(module)
