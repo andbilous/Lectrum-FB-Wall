@@ -25,9 +25,7 @@ export default class App extends Component {
     isAuthenticated: localStorage.getItem("isLoggedIn")
   };
 
-  componentDidMount() {
-    //s
-  }
+  componentDidMount() {}
 
   logoutHandler = () => {
     this.setState({
