@@ -22,7 +22,7 @@ const loginBtnStyles = {
 @hot(module)
 export default class App extends Component {
   state = {
-    isAuthenticated: !!localStorage.getItem("isLoggedIn")
+    isAuthenticated: JSON.parse(localStorage.getItem("isLoggedIn"))
   };
 
   logoutHandler = () => {
